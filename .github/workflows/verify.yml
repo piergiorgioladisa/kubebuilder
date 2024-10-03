@@ -14,7 +14,9 @@ jobs:
 
       - name: Get PR title
         id: get_title
-        run: echo "title=${{ github.event.pull_request.title }}" >> $GITHUB_ENV
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: echo "title=$TITLE" >> $GITHUB_ENV
 
       - name: Run PR Title Checker
         id: check_title
