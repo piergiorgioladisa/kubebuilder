@@ -20,3 +20,4 @@ jobs:
         id: check_title
         run: |
           ./test/pr-title-checker.sh "${{ env.title }}"
+
